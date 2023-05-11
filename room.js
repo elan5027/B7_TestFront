@@ -50,6 +50,24 @@ function createMessage(data) {
     chatLog.value += (author + ': ' + data.content + '\n');
 }
 
+function roomDelete(){
+    const roomId = localStorage.getItem('roomName')
+    const token = localStorage.getItem("access")
+    console.log(roomId, token)
+    const response = fetch('http://127.0.0.1:8000/chat/room/', {
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        body:JSON.stringify({
+            "room_id": roomId,
+        }),
+        method: 'DELETE',
+    })
+    .then(window.location.pathname = `index.html`)
+ 
+}
+
 chatMessageInput.focus();
 
 chatMessageInput.onkeyup = function(e) {

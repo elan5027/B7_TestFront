@@ -48,6 +48,7 @@ async function handleLogin() {
     console.log(jsonload)
     
     localStorage.setItem("userId", jsonload['user_id'])
+    window.location.reload()
 }
 
 
@@ -56,6 +57,11 @@ async function handleLogout() {
         localStorage.removeItem("access")
         localStorage.removeItem("refresh")
     }
+    let procuct_doc = document.querySelector("#chatroom")
+    while(procuct_doc.hasChildNodes() ){
+        procuct_doc.removeChild(procuct_doc.lastChild)
+    }
+    
 }
 
 
