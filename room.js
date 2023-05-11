@@ -50,7 +50,6 @@ function createMessage(data) {
     chatLog.value += (author + ': ' + data.content + '\n');
 }
 
-
 chatMessageInput.focus();
 
 chatMessageInput.onkeyup = function(e) {

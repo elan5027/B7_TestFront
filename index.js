@@ -16,8 +16,6 @@ window.onload = () => {
         }
         ger_user_in_rooms()
     }) 
-
-    
 }
 
 function ger_user_in_rooms(){
@@ -72,7 +70,6 @@ function roomset(author){
                 console.log("JSON",json)
                 roompage(json)
             }
-            
         }) 
     }
 }
